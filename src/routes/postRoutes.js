@@ -12,9 +12,9 @@ router.get('/getAll', postController.getAllPosts)
 router.get('/getById/:id', postController.getPostById)
 
 // U = Update o push/put (unitario)  http://localhost:5005/posts/update
-//router.push('/update', postController)
+//router.put('/update/:id', postController)
 
 // D = Delete o borrar (unitario)  http://localhost:5005/posts/dlt
-//router.push('/dlt', postController)
+//router.delete('/dlt/:id', postController)
 
 module.exports = router;

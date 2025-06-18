@@ -25,3 +25,7 @@ exports.getPostById = (req, res) => {
     if (!post) return res.status(404).json({error:'Post no encontrado'});
     res.json(post)
 }
+
+// update
+
+//delete
