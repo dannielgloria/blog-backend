@@ -1,6 +1,6 @@
 const express = require('express');
 const postRoutes = require('./routes/postRoutes')
-//const postRoutes = require('./routes/postRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 const PORT = 5005;
@@ -12,7 +12,7 @@ app.use(express.json())
 app.use('/posts',postRoutes)
 
 /// http://localhost:5005/users
-//app.use('/users',postRoutes)
+app.use('/users',userRoutes)
 
 app.listen(PORT, ()=>{
     console.log(`Servidor corriendo en http://localhost:${PORT}`)
