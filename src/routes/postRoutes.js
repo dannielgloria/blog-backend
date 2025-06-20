@@ -2,19 +2,19 @@ const express = require('express');
 const postController = require('../controllers/postController');
 const router = express.Router();
 
-// C = create o post  http://localhost:5005/posts/cerate
+// Crear un nuevo post: POST /posts/create
 router.post('/create', postController.createPost);
 
-// R = Read o get  http://localhost:5005/posts/getAll
-router.get('/getAll', postController.getAllPosts)
+// Obtener todos los posts: GET /posts/getAll
+router.get('/getAll', postController.getAllPosts);
 
-// R = Read o get (unitario)  http://localhost:5005/posts/getById/1
-router.get('/getById/:id', postController.getPostById)
+// Obtener un post por ID: GET /posts/getById/:id
+router.get('/getById/:id', postController.getPostById);
 
-// U = Update o push/put (unitario)  http://localhost:5005/posts/update
-//router.put('/update/:id', postController)
+// Actualizar un post por ID: PUT /posts/update/:id
+router.put('/update/:id', postController.updatePost);
 
-// D = Delete o borrar (unitario)  http://localhost:5005/posts/dlt
-//router.delete('/dlt/:id', postController)
+// Eliminar un post por ID: DELETE /posts/delete/:id
+router.delete('/delete/:id', postController.deletePost);
 
 module.exports = router;
