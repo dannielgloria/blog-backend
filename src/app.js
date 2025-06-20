@@ -1,9 +1,9 @@
 const express = require('express');
+const constants = require('./config/constants')
 const postRoutes = require('./routes/postRoutes')
 const userRoutes = require('./routes/userRoutes')
 
 const app = express();
-const PORT = 5005;
 
 //Middleware para parsear(hacer uso) JSON
 app.use(express.json())
@@ -14,6 +14,6 @@ app.use('/posts',postRoutes)
 /// http://localhost:5005/users
 app.use('/users',userRoutes)
 
-app.listen(PORT, ()=>{
-    console.log(`Servidor corriendo en http://localhost:${PORT}`)
+app.listen(constants.PORT, ()=>{
+    console.log(`Servidor corriendo en http://localhost:${constants.PORT}`)
 })
