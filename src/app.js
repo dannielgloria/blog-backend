@@ -1,11 +1,12 @@
 const express = require('express');
-const constants = require('./config/constants')
+const cors = require('cors')
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes')
 const userRoutes = require('./routes/userRoutes')
 
 const app = express();
 
+app.use(cors())
 //Middleware para parsear(hacer uso) JSON
 app.use(express.json())
 
@@ -18,6 +19,4 @@ app.use('/posts',postRoutes)
 /// http://localhost:5005/users
 app.use('/users',userRoutes)
 
-app.listen(constants.PORT, ()=>{
-    console.log(`Servidor corriendo en http://localhost:${constants.PORT}`)
-})
+module.exports = app;
