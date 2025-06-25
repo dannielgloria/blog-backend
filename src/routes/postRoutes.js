@@ -1,9 +1,10 @@
 const express = require('express');
 const postController = require('../controllers/postController');
 const router = express.Router();
+const authMiddleware = require('../middleware/authMiddleware');
 
 // Crear un nuevo post: POST /posts/create
-router.post('/create', postController.createPost);
+router.post('/create', authMiddleware ,postController.createPost);
 
 // Obtener todos los posts: GET /posts/getAll
 router.get('/getAll', postController.getAllPosts);
